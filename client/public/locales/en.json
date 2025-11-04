@@ -1,0 +1,36 @@
+{
+  "header": {
+    "title": "Farmer Support Platform",
+    "home": "Home",
+    "login": "Login",
+    "dashboard": "Dashboard"
+  },
+  "login": {
+    "title": "Login to your account",
+    "email": "Email Address",
+    "password": "Password",
+    "button": "Sign In",
+    "noAccount": "Don't have an account?"
+  },
+  "home": {
+    "welcome": "Welcome to the Farmer Support & Market Price Platform"
+  },
+  "lang": {
+    "en": "English",
+    "hi": "Hindi",
+    "or": "Odia"
+  },
+  "register": {
+    "title": "Create your account",
+    "name": "Full Name",
+    "role": "I am a...",
+    "buyer": "Buyer",
+    "farmer": "Farmer",
+    "button": "Sign Up",
+    "haveAccount": "Already have an account?"
+  },
+  "alerts": {
+    "title": "Weather Alerts",
+    "loading": "Loading alerts..."
+  }
+}
