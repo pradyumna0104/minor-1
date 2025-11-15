@@ -44,17 +44,87 @@ const LoginPage = () => {
     }
   };
 
+  // return (
+  //   <div className="flex justify-center items-center mt-10">
+  //     <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+  //       <h2 className="text-2xl font-bold text-center mb-6">
+  //         {t('login.title')}
+  //       </h2>
+  //       {/* Show error message */}
+  //       {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+
+  //       <form onSubmit={handleSubmit}>
+  //         <div className="mb-4">
+  //           <label
+  //             htmlFor="email"
+  //             className="block text-gray-700 font-semibold mb-2"
+  //           >
+  //             {t('login.email')}
+  //           </label>
+  //           <input
+  //             type="email"
+  //             id="email"
+  //             value={email}
+  //             onChange={(e) => setEmail(e.target.value)}
+  //             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-slack-accent"
+  //             required
+  //           />
+  //         </div>
+  //         <div className="mb-6">
+  //           <label
+  //             htmlFor="password"
+  //             className="block text-gray-700 font-semibold mb-2"
+  //           >
+  //             {t('login.password')}
+  //           </label>
+  //           <input
+  //             type="password"
+  //             id="password"
+  //             value={password}
+  //             onChange={(e) => setPassword(e.target.value)}
+  //             className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-slack-accent"
+  //             required
+  //           />
+  //         </div>
+  //         <button
+  //           type="submit"
+  //           className="w-full bg-slack-primary text-white py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
+  //           disabled={loading} // Disable button while loading
+  //         >
+  //           {loading ? 'Logging in...' : t('login.button')}
+  //         </button>
+  //       </form>
+        
+  //       <p className="text-center mt-4 text-gray-600">
+  //         {t('login.noAccount')}{' '}
+  //         <Link to="/register" className="text-slack-accent font-semibold hover:underline">
+  //           {t('register.button')}
+  //         </Link>
+  //       </p>
+  //     </div>
+  //   </div>
+  // );
   return (
-    <div className="flex justify-center items-center mt-10">
-      <div className="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h2 className="text-2xl font-bold text-center mb-6">
+    <div
+      className="min-h-[85vh] flex justify-center items-center px-4 bg-cover bg-center bg-no-repeat"
+      style={{
+        backgroundImage:
+          "url('https://images.unsplash.com/photo-1495107334309-fcf20504a5ab?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFybSUyMGJhY2tncm91bmR8ZW58MHx8MHx8fDA%3D&fm=jpg&q=60&w=3000')",
+      }}
+    >
+      <div className="bg-white/30 backdrop-blur-lg p-8 rounded-2xl shadow-lg w-full max-w-md border border-white/30">
+        <h2 className="text-3xl font-bold text-center mb-6 text-slack-primary">
           {t('login.title')}
         </h2>
-        {/* Show error message */}
-        {error && <p className="text-red-500 text-center mb-4">{error}</p>}
+
+        {error && (
+          <p className="text-red-500 text-center bg-red-50 py-2 px-3 rounded-md mb-4 border border-red-200">
+            {error}
+          </p>
+        )}
 
         <form onSubmit={handleSubmit}>
-          <div className="mb-4">
+          <div className="mb-5">
             <label
               htmlFor="email"
               className="block text-gray-700 font-semibold mb-2"
@@ -66,10 +136,11 @@ const LoginPage = () => {
               id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-slack-accent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slack-primary focus:border-slack-primary transition-all duration-200"
               required
             />
           </div>
+
           <div className="mb-6">
             <label
               htmlFor="password"
@@ -82,22 +153,26 @@ const LoginPage = () => {
               id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-slack-accent"
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-slack-primary focus:border-slack-primary transition-all duration-200"
               required
             />
           </div>
+
           <button
             type="submit"
-            className="w-full bg-slack-primary text-white py-2 rounded-lg font-semibold hover:bg-opacity-90 transition-colors"
-            disabled={loading} // Disable button while loading
+            className="w-full bg-slack-primary hover:bg-slack-accent text-white py-2 rounded-lg font-semibold transition-all duration-200 disabled:opacity-70"
+            disabled={loading}
           >
             {loading ? 'Logging in...' : t('login.button')}
           </button>
         </form>
-        
-        <p className="text-center mt-4 text-gray-600">
+
+        <p className="text-center mt-5 text-gray-600">
           {t('login.noAccount')}{' '}
-          <Link to="/register" className="text-slack-accent font-semibold hover:underline">
+          <Link
+            to="/register"
+            className="text-slack-primary font-semibold hover:underline"
+          >
             {t('register.button')}
           </Link>
         </p>

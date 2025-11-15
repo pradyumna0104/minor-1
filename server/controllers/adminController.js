@@ -1,5 +1,6 @@
 import WeatherAlert from '../models/WeatherAlert.js';
 import MandiPrice from '../models/MandiPrice.js';
+import User from '../models/User.js'; // 1. Import the User model
 
 // @desc    Create a weather alert
 // @route   POST /api/admin/weather-alert
